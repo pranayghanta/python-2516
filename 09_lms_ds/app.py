@@ -121,7 +121,13 @@ while True:
                 print(f"skills count: {len(skills)}")                
                    
     elif choice == "5":
-        print("performing operation 5")  
+        print("performing operation 5")
+        print("="*50)
+        print("contact admin for further queries")
+        print(f"admin contact: {ADMIN_INFO[1]}")
+        print(f"admin email: {ADMIN_INFO[0]}")
+        print("="*50)
+  
         break  
     else:
         print("invalid choice only (1-5) available")
