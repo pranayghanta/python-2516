@@ -64,7 +64,17 @@ while True:
             # for verification print student
             print(students)                         
     elif choice == "2":
-        print("performing operation 2")    
+        print("performing operation 2")  
+        student_id = input("Enter student ID to modify: ")
+        if student_id in students:
+            new_name = input("Enter new name to update: ").title()
+            students[student_id]["name"] = new_name
+            print("student updated successfully!")
+        else:
+            print("student ID doesn't exist!") 
+
+        print(students)                         
+   
     elif choice == "3":
         print("performing operation 3")    
     elif choice == "4":
