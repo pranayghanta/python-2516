@@ -147,7 +147,38 @@ print(math_new(3,4,"+"))
 print(math_new(3,4,"*"))      
 print(math_new(3,4,"'"))      
 
+# Local scope for variables
+def add():
+    # local variables are bb and cc
+    bb = 5
+    cc = 6
+    print(bb) # accessing inside the function
+    print(cc) # accessing inside the function
+add()    
+# print(bb) # accessing outside the function
+# parameters passed to functions are also local variables
+def add(bb,cc): # local variables are bb and cc
+    print(bb)
+    print(cc)
+add(10,20)    
+# print(bb) # accessing outside the function
 
+# global variable
+aa = 30
+def add(bb,cc,aa):       # local variables are bb and cc
+    print(bb) # accessing local variable inside the function
+    print(cc) # accessing local variable inside the function
+    print(aa) # accessing local variable inside the function
+    print(globals()['aa']) # accessing global variable when name conflict
+add(1,2,3)
+print(aa) # accessing global variable inside the function
 
-
+ # trying to change global variable
+count = 0
+def increment():
+#    count += 1 # UnboundLocalError: cannot access local variable 'count' where it is not associated with a value
+    global count
+    count += 1
+increment()
+print("count: ",count)    
       
